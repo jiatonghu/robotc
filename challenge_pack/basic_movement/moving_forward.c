@@ -3,5 +3,8 @@
 
 task main()
 {
-	// TODO: let the robot move forward
+	while(1){
+		setMotorSpeed(motor1, 50);
+		setMotorSpeed(motor6, 50);
+	}
 }
