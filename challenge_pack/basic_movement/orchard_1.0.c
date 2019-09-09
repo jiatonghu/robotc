@@ -83,28 +83,22 @@ task main()
 
 	forward(6.8, rotations, 75);
 
-		moveMotor(motor11,1.5,seconds,50);
+	moveMotor(motor11,1.5,seconds,50);
 	moveMotor(motor10,1.7,seconds,-50);
 
 	turnLeftByGyro(88.7);
 
 	forward(2, rotations, 75);
 
-		turnLeftByGyro(85.5);
+	turnLeftByGyro(85.5);
 
-		forward(1.5, rotations, 75);
-
-		forward(7.8, rotations, 75);
-
-		moveMotor(motor11,1.5,seconds,-50);
+	moveMotor(motor11,1.5,seconds,-50);
 	moveMotor(motor10,1.7,seconds,50);
 
+	forward(1.5, rotations, 75);
 
+	forward(7.8, rotations, 75);
 
-
-
-
-
-
-
+	moveMotor(motor11,1.5,seconds,50);
+	moveMotor(motor10,1.7,seconds,-50);
 }
