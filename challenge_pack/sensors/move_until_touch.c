@@ -4,7 +4,8 @@
 // Use setMultipleMotors and getBumperValue
 task main()
 {
-	setMultipleMotors(10000, motor1, motor6);
+	moveMotor(motor10,5,seconds,50);
+	setMultipleMotors(50, leftMotor, rightMotor);
 	while(getBumperValue(port8) == 0){
 	}
 	stopAllMotors();
