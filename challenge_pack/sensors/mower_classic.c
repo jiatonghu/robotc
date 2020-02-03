@@ -10,31 +10,40 @@
 void turnRightByGyro(int degrees)
 {
 	resetGyro(port4);
-	while(getGyroDegrees(port4)>-degrees)
+	while(getGyroDegrees(port4)>-degrees + 1)
 	{
-		setMotorSpeed(motor1,50);
-		setMotorSpeed(motor6,-50);
+		setMotorSpeed(motor1,35);
+		setMotorSpeed(motor6,-35);
 	}
 	setMotorSpeed(motor1,0);
 	setMotorSpeed(motor6,0);
 }
+void turnLeftByGyro(int degrees)
+{
+	resetGyro(port4);
+	while(getGyroDegrees(port4)<degrees - 1)
+	{
+		setMotorSpeed(motor1,-35);
+		setMotorSpeed(motor6,35);
+	}
+	setMotorSpeed(motor1,0);
+	setMotorSpeed(motor6,0);
+}
+
 task main()
 {
-forward(7, rotations, 100);
-sleep(5000);
-turnRightByGyro(90);
-forward(7, rotations, 100);
-sleep(5000);
-turnRightByGyro(90);
-forward(7, rotations, 100);
-turnRightByGyro(90);
-forward(2, rotations, 100);
-sleep(5000);
-forward(2.3, rotations, 100);
-turnRightByGyro(90);
-forward(5, rotations, 100);
-turnRightByGyro(90);
-forward(3, rotations, 100);
-turnRightByGyro(90);
-forward(4, rotations, 100);
+
+	forward(7, rotations, 100);
+	turnRightByGyro(90);
+	forward(2, rotations, 100);
+	turnRightByGyro(90);
+	forward(7, rotations, 100);
+	turnLeftByGyro(90);
+	forward(2, rotations, 100);
+	turnLeftByGyro(90);
+	forward(7, rotations, 100);
+	turnRightByGyro(90);
+	forward(2, rotations, 100);
+	turnRightByGyro(90);
+	forward(7, rotations, 100);
 }
