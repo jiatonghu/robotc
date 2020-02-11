@@ -3,6 +3,8 @@
 
 task main()
 {
-forward(1, rotations, 50);
-backward(1, rotations, 50);
+	while(1) {
+		forward(1, rotations, 50);
+		backward(1, rotations, 50);
+	}
 }
