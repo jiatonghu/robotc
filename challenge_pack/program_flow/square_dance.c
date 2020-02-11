@@ -3,7 +3,7 @@
 void turnRightByGyro(int degrees)
 {
 	resetGyro(port4);
-	while(getGyroDegrees(port4)>-degrees )
+	while(getGyroDegrees(port4) > -degrees)
 	{
 		setMotorSpeed(motor1,35);
 		setMotorSpeed(motor6,-35);
