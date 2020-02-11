@@ -3,7 +3,7 @@
 void turnRightByGyro(int degrees)
 {
 	resetGyro(port4);
-	while(getGyroDegrees(port4)>-degrees + 1)
+	while(getGyroDegrees(port4)>-degrees )
 	{
 		setMotorSpeed(motor1,35);
 		setMotorSpeed(motor6,-35);
@@ -13,9 +13,9 @@ void turnRightByGyro(int degrees)
 }
 task main()
 {
-	for(int i = 0; i < 4; i++){
+	while(1) {
 		setTouchLEDColor(port2, colorGreen);
-		forward(7.5, rotations, 50);
+		forward(7.5, rotations, 100);
 		setTouchLEDColor(port2, colorYellow);
 		turnRightByGyro(90);
 	}
