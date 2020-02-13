@@ -3,10 +3,10 @@
 void turnRightByGyro(int degrees)
 {
 	resetGyro(port4);
-	while(getGyroDegrees(port4)>-degrees + 1)
+	while(getGyroDegrees(port4) > -degrees)
 	{
-		setMotorSpeed(motor1,35);
-		setMotorSpeed(motor6,-35);
+		setMotorSpeed(motor1,15);
+		setMotorSpeed(motor6,-15);
 	}
 	setMotorSpeed(motor1,0);
 	setMotorSpeed(motor6,0);
@@ -14,10 +14,10 @@ void turnRightByGyro(int degrees)
 void turnLeftByGyro(int degrees)
 {
 	resetGyro(port4);
-	while(getGyroDegrees(port4)<degrees - 1)
+	while(getGyroDegrees(port4) < degrees)
 	{
-		setMotorSpeed(motor1,-35);
-		setMotorSpeed(motor6,35);
+		setMotorSpeed(motor1,-15);
+		setMotorSpeed(motor6,15);
 	}
 	setMotorSpeed(motor1,0);
 	setMotorSpeed(motor6,0);
