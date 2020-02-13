@@ -30,10 +30,12 @@ task main()
 		//then we'll set the speed of the motor to vlaue from the joystick.
 		if(joystick.joy1_y1 > threshold || joystick.joy1_y1 < -threshold)
 		{
+			setTouchLEDColor(port2, colorGreen);
 			setMotorSpeed(leftMotor, joystick.joy1_y1);
 		}
 		else  //If less than the threshold, we'll set the motor to zero.
 		{
+			setTouchLEDColor(port2, colorRed);
 			setMotorSpeed(leftMotor, 0);
 		}
 
@@ -41,10 +43,12 @@ task main()
 		//then we'll set the speed of the motor to vlaue from the joystick.
 		if(joystick.joy1_y2 > threshold || joystick.joy1_y2 < -threshold)
 		{
+			setTouchLEDColor(port2, colorGreen);
 			setMotorSpeed(rightMotor, joystick.joy1_y2);
 		}
 		else  //If less than the threshold, we'll set the motor to zero.
 		{
+			setTouchLEDColor(port2, colorRed);
 			setMotorSpeed(rightMotor, 0);
 		}
 
@@ -53,30 +57,36 @@ task main()
 		//If Button "Btn5" is pressed in, we'll set the arm motor to run in reverse.
 		if(joystick.joy1_Buttons == 1)
 		{
+			setTouchLEDColor(port2, colorYellow);
 			setMotorSpeed(armMotor, -127);
 		}
 		//If the "Btn5" isn't pressed, but "Btn7" is, we'll set the motor to run forward.
 		else if(joystick.joy1_Buttons == 8)
 		{
+			setTouchLEDColor(port2, colorYellow);
 			setMotorSpeed(armMotor, 127);
 		}
 		else  //If neither button is pressed, we'll set the motor off.
 		{
+			setTouchLEDColor(port2, colorRed);
 			setMotorSpeed(armMotor, 0);
 		}
 
 		//If Button "Btn6" is pressed in, we'll set the arm motor to run in reverse.
 		if(joystick.joy1_Buttons == 4)
 		{
+			setTouchLEDColor(port2, colorBlue);
 			setMotorSpeed(clawMotor, -127);
 		}
 		//If the "Btn6" isn't pressed, but "Btn8" is, we'll set the motor to run forward.
 		else if(joystick.joy1_Buttons == 2)
 		{
+			setTouchLEDColor(port2, colorBlue);
 			setMotorSpeed(clawMotor, 127);
 		}
 		else	//If neither button is pressed, we'll set the mot																																					or off.
 		{
+			setTouchLEDColor(port2, colorRed);
 			setMotorSpeed(clawMotor, 0);
 		}
 	}
