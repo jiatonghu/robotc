@@ -3,7 +3,12 @@
 
 task main()
 {
-	setMultipleMotors(50, leftMotor, rightMotor);
-	while(getDistanceValue(port7) > 100){}
-	setMultipleMotors(-50, leftMotor, rightMotor);
+	while(getMotorEncoder(leftMotor) < 1440){
+		if(getDistanceValue(port7) < 100){
+			stopMultipleMotors(motor1, motor6);
+		}
+		else{
+			setMultipleMotors(50, motor1, motor6);
+		}
+	}
 }
