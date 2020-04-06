@@ -11,4 +11,5 @@ task main()
 			setMultipleMotors(50, motor1, motor6);
 		}
 	}
+	stopMultipleMotors(motor1, motor6);
 }
